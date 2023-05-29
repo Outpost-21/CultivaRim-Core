@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<JustRoots.CropTableDef>
+		<defName>JustRoots_Crops</defName>
+		<workerClass>JustRoots.CropTable_JustCrops</workerClass>
+		<columns>
+			<li>JustRoots_LabelWithIcon</li>
+			<li>JustRoots_Level</li>
+			<li>JustRoots_Experience</li>
+			<li>JustRoots_ProductYield</li>
+			<li>JustRoots_GrowthSpeed</li>
+			<li>JustRoots_HeatResist</li>
+			<li>JustRoots_ColdResist</li>
+		</columns>
+	</JustRoots.CropTableDef>
+
+</Defs>

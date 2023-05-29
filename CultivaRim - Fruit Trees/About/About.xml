@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>CultivaRim - Fruit Trees</name>
+	<author>Neronix17</author>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>Neronix17.CultivaRim.FruitTrees</packageId>
+	<description>Adds a variety of fruit trees using CultivaRim mechanics.</description>
+</ModMetaData>

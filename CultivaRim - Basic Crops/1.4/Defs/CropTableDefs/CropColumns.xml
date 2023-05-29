@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<JustRoots.CropColumnDef Name="JustRoots_CropLabel">
+		<defName>JustRoots_Label</defName>
+		<workerClass>JustRoots.CropColumnWorker_Label</workerClass>
+		<widthPriority>100</widthPriority>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef Name="JustRoots_CropLabelWithIcon" ParentName="JustRoots_CropLabel">
+		<defName>JustRoots_LabelWithIcon</defName>
+		<showIcon>true</showIcon>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef>
+		<defName>JustRoots_Level</defName>
+		<label>level</label>
+		<workerClass>JustRoots.CropColumnWorker_Level</workerClass>
+		<sortable>true</sortable>
+		<width>30</width>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef>
+		<defName>JustRoots_Experience</defName>
+		<label>experience</label>
+		<workerClass>JustRoots.CropColumnWorker_Experience</workerClass>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef>
+		<defName>JustRoots_ProductYield</defName>
+		<label>yield</label>
+		<workerClass>JustRoots.CropColumnWorker_StatProductYield</workerClass>
+		<width>30</width>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef>
+		<defName>JustRoots_GrowthSpeed</defName>
+		<label>growth</label>
+		<workerClass>JustRoots.CropColumnWorker_StatGrowthSpeed</workerClass>
+		<width>30</width>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef>
+		<defName>JustRoots_HeatResist</defName>
+		<label>heat</label>
+		<workerClass>JustRoots.CropColumnWorker_StatHeatResist</workerClass>
+		<width>30</width>
+	</JustRoots.CropColumnDef>
+
+	<JustRoots.CropColumnDef>
+		<defName>JustRoots_ColdResist</defName>
+		<label>cold</label>
+		<workerClass>JustRoots.CropColumnWorker_StatColdResist</workerClass>
+		<width>30</width>
+	</JustRoots.CropColumnDef>
+
+</Defs>

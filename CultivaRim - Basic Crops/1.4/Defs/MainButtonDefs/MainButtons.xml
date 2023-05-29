@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MainButtonDef>
+    <defName>JustRoots_Crops</defName>
+    <label>crops</label>
+    <description>View and manipulate the colonies crop knowledge.</description>
+    <!-- <workerClass>MainButtonWorker_ToggleMechTab</workerClass> -->
+    <tabWindowClass>JustRoots.MainTabWindow_Crops</tabWindowClass>
+    <order>59</order>
+    <closesWorldView>true</closesWorldView>
+  </MainButtonDef>
+
+</Defs>
