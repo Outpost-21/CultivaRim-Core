@@ -13,8 +13,8 @@ namespace CultivaRim
     [HarmonyPatch(typeof(JobDriver_PlantSow), "MakeNewToils")]
     public static class Patch_JobDriver_PlantSow_MakeNewToils
     {
-        [HarmonyPostfix]
-        public static void Postfix(JobDriver_PlantSow __instance)
+        [HarmonyPrefix]
+        public static void Prefix(JobDriver_PlantSow __instance)
         {
             if(__instance.Plant != null && __instance.sowWorkDone >= __instance.Plant.def.plant.sowWork)
             {
