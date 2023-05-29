@@ -37,7 +37,7 @@ namespace CultivaRim
 
         public int CurLevel => Mathf.FloorToInt(experience / 1000);
 
-        public float CurLevelPercentage => (CurLevel > 0) ? ((experience - (CurLevel - 1f * 1000f)) / 1000f) : (experience / 1000f);
+        public float CurLevelPercentage => (CurLevel > 0) ? ((experience - (CurLevel * 1000f)) / 1000f) : (experience / 1000f);
 
         public int UnspentPoints => CurLevel - (speedBoosts + yieldBoosts + heatBoosts + coldBoosts + rainBoosts);
 
@@ -81,7 +81,7 @@ namespace CultivaRim
                         break;
                 }
             //}
-            Messages.Message("JustRoots.CropKnowledgeLevelUp".Translate(plantDef.LabelCap, CurLevel), MessageTypeDefOf.TaskCompletion);
+            Messages.Message("CultivaRim.CropKnowledgeLevelUp".Translate(plantDef.LabelCap, CurLevel), MessageTypeDefOf.TaskCompletion);
         }
 
         public void ExposeData()

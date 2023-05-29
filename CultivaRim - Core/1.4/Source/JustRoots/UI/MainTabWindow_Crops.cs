@@ -11,6 +11,6 @@ namespace CultivaRim
 {
     public class MainTabWindow_Crops : MainTabWindow_CropTable
     {
-        protected override CropTableDef CropTableDef => CultivaRimDefOf.JustRoots_Crops;
+        protected override CropTableDef CropTableDef => CultivaRimDefOf.CultivaRim_Crops;
     }
 }

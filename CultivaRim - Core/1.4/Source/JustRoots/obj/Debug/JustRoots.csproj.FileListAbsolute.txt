@@ -1,4 +1,4 @@
-F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Assemblies\JustRoots.dll
-F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Source\JustRoots\obj\Debug\JustRoots.csproj.AssemblyReference.cache
-F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Source\JustRoots\obj\Debug\JustRoots.csproj.CoreCompileInputs.cache
-F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Source\JustRoots\obj\Debug\JustRoots.dll
+F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Assemblies\CultivaRim.dll
+F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Source\CultivaRim\obj\Debug\CultivaRim.csproj.AssemblyReference.cache
+F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Source\CultivaRim\obj\Debug\CultivaRim.csproj.CoreCompileInputs.cache
+F:\RWModCategories\Neronix17\_BigMods\Just Roots\1.4\Source\CultivaRim\obj\Debug\CultivaRim.dll

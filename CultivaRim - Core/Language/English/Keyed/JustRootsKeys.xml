@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<JustRoots.CropKnowledgeLevelUp>{0} knowledge has increased to level {1}!</JustRoots.CropKnowledgeLevelUp>
-	<JustRoots.WildPrefix>wild</JustRoots.WildPrefix>
+	<CultivaRim.CropKnowledgeLevelUp>{0} knowledge has increased to level {1}!</CultivaRim.CropKnowledgeLevelUp>
+	<CultivaRim.WildPrefix>wild</CultivaRim.WildPrefix>
 
 </LanguageData>

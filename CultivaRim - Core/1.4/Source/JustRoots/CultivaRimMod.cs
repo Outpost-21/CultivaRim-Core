@@ -36,7 +36,7 @@ namespace CultivaRim
 
             File.WriteAllText(VersionDir, CurrentVersion);
 
-            Harmony harmony = new Harmony("Neronix17.JustRoots.RimWorld");
+            Harmony harmony = new Harmony("Neronix17.CultivaRim.RimWorld");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 

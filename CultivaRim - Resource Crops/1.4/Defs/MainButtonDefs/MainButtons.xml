@@ -2,11 +2,11 @@
 <Defs>
 
   <MainButtonDef>
-    <defName>JustRoots_Crops</defName>
+    <defName>CultivaRim_Crops</defName>
     <label>crops</label>
     <description>View and manipulate the colonies crop knowledge.</description>
     <!-- <workerClass>MainButtonWorker_ToggleMechTab</workerClass> -->
-    <tabWindowClass>JustRoots.MainTabWindow_Crops</tabWindowClass>
+    <tabWindowClass>CultivaRim.MainTabWindow_Crops</tabWindowClass>
     <order>59</order>
     <closesWorldView>true</closesWorldView>
   </MainButtonDef>

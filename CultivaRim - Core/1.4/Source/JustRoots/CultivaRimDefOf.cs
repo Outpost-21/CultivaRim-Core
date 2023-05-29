@@ -17,6 +17,6 @@ namespace CultivaRim
             DefOfHelper.EnsureInitializedInCtor(typeof(CultivaRimDefOf));
         }
 
-        public static CropTableDef JustRoots_Crops;
+        public static CropTableDef CultivaRim_Crops;
     }
 }
