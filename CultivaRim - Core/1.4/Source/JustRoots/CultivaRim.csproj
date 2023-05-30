@@ -82,8 +82,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CropTrait.cs" />
+    <Compile Include="Harmony\Patch_Plant_Graphic.cs" />
+    <Compile Include="ModExtensions\DefModExt_CropInfo.cs" />
+    <Compile Include="Defs\CropTraitDef.cs" />
+    <Compile Include="CropTraitWorker\CropTraitWorker.cs" />
     <Compile Include="CultivaRimDefOf.cs" />
     <Compile Include="UI\CropColumnWorker_Label.cs" />
+    <Compile Include="UI\CropColumnWorker_Upgrade.cs" />
     <Compile Include="UI\CropColumnWorker_StatColdResist.cs" />
     <Compile Include="UI\CropColumnWorker_StatHeatResist.cs" />
     <Compile Include="UI\CropColumnWorker_StatGrowthSpeed.cs" />

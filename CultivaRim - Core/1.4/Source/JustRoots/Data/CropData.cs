@@ -30,16 +30,71 @@ namespace CultivaRim
         public string StatColdResist => "+" + (coldBoosts * 0.5f).ToStringTemperature();
         public string StatRainGrowth => "+" + (rainBoosts * 0.05f).ToStringPercent();
 
-        public bool hydroponics = false;
-        public bool blightFree = false;
-        public bool autoReplant = false;
-        public bool lightIgnored = false;
+        //public bool hydroponics = false;
+        //public bool blightFree = false;
+        //public bool autoReplant = false;
+        //public bool lightIgnored = false;
+
+        public List<CropTrait> cropTraits = new List<CropTrait>();
 
         public int CurLevel => Mathf.FloorToInt(experience / 1000);
 
         public float CurLevelPercentage => (CurLevel > 0) ? ((experience - (CurLevel * 1000f)) / 1000f) : (experience / 1000f);
 
         public int UnspentPoints => CurLevel - (speedBoosts + yieldBoosts + heatBoosts + coldBoosts + rainBoosts);
+
+        public int TraitUnlocks => Mathf.FloorToInt(CurLevel / 5);
+
+        public DefModExt_CropInfo modExt;
+
+        public DefModExt_CropInfo ModExt
+        {
+            get
+            {
+                if(modExt == null)
+                {
+                    DefModExt_CropInfo modExtInt = plantDef.GetModExtension<DefModExt_CropInfo>();
+                    if (modExtInt == null)
+                    {
+                        modExt = new DefModExt_CropInfo();
+                    }
+                    else
+                    {
+                        modExt = modExtInt;
+                    }
+                }
+                return modExt;
+            }
+        }
+
+        public Graphic wildCropGraphic;
+        public Graphic wildCropImmatureGraphic;
+
+        public Graphic WildCropGraphic
+        {
+            get
+            {
+                if (wildCropGraphic == null && (!ModExt?.wildCropPath?.NullOrEmpty() ?? false))
+                {
+                    wildCropGraphic = GraphicDatabase.Get(plantDef.graphicData.graphicClass, ModExt.wildCropPath, plantDef.graphic.Shader, plantDef.graphicData.drawSize, plantDef.graphicData.color, plantDef.graphicData.colorTwo);
+                }
+                return wildCropGraphic;
+            }
+        }
+
+        public Graphic WildCropImmatureGraphic
+        {
+            get
+            {
+                if (wildCropImmatureGraphic == null && (!ModExt?.wildCropImmaturePath?.NullOrEmpty() ?? false))
+                {
+                    wildCropImmatureGraphic = GraphicDatabase.Get(plantDef.graphicData.graphicClass, ModExt.wildCropImmaturePath, plantDef.graphic.Shader, plantDef.graphicData.drawSize, plantDef.graphicData.color, plantDef.graphicData.colorTwo);
+                }
+                return wildCropImmatureGraphic;
+            }
+        }
+
+        public bool Cultivated => ModExt.cultivatedLevel < CurLevel;
 
         public void AddExperience(float exp, Pawn pawn, bool intelligenceMatters = false)
         {
@@ -100,10 +155,7 @@ namespace CultivaRim
             Scribe_Values.Look(ref coldBoosts, "coldBoosts");
             Scribe_Values.Look(ref rainBoosts, "rainBoosts");
 
-            Scribe_Values.Look(ref hydroponics, "hydroponics");
-            Scribe_Values.Look(ref blightFree, "blightFree");
-            Scribe_Values.Look(ref autoReplant, "autoReplant");
-            Scribe_Values.Look(ref lightIgnored, "lightIgnored");
+            Scribe_Collections.Look(ref cropTraits, "cropTraits");
         }
     }
 }

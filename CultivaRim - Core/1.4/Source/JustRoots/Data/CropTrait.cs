@@ -9,11 +9,8 @@ using Verse;
 
 namespace CultivaRim
 {
-    public class CropColumnWorker_Respec : CropColumnWorker
+    public class CropTrait
     {
-        public override void DoCell(Rect rect, ThingDef crop, CropTable table)
-        {
-
-        }
+        public CropTraitDef def;
     }
 }

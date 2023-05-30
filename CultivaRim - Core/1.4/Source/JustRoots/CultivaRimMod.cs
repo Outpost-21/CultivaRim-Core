@@ -40,7 +40,7 @@ namespace CultivaRim
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 
-        public override string SettingsCategory() => "Just Roots";
+        public override string SettingsCategory() => "CultivaRim";
 
         public override void DoSettingsWindowContents(Rect inRect)
         {

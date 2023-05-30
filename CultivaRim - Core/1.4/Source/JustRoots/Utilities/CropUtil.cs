@@ -15,19 +15,21 @@ namespace CultivaRim
 
         public static List<ThingDef> CalculateCropFromHarvestable(ThingDef harvested)
         {
-            // TODO: Find a better way to control this, possibly setting up a register of supported crops and only
-            // doing this method when it's unable to find built in support?
             if (cropDropDict.NullOrEmpty())
             {
                 foreach(ThingDef thing in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsPlant && t.plant.harvestedThingDef != null))
                 {
-                    if (!cropDropDict.ContainsKey(thing.plant.harvestedThingDef))
+                    DefModExt_CropInfo modExt = thing.GetModExtension<DefModExt_CropInfo>();
+                    if (modExt == null || modExt.unlockedByProduct)
                     {
-                        cropDropDict.Add(thing.plant.harvestedThingDef, new List<ThingDef>() { thing });
-                    }
-                    else
-                    {
-                        cropDropDict[thing.plant.harvestedThingDef].Add(thing);
+                        if (!cropDropDict.ContainsKey(thing.plant.harvestedThingDef))
+                        {
+                            cropDropDict.Add(thing.plant.harvestedThingDef, new List<ThingDef>() { thing });
+                        }
+                        else
+                        {
+                            cropDropDict[thing.plant.harvestedThingDef].Add(thing);
+                        }
                     }
                 }
             }

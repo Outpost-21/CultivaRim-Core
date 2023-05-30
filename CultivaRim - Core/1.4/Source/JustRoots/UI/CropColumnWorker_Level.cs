@@ -25,7 +25,8 @@ namespace CultivaRim
 
 		protected override string GetTextFor(ThingDef crop)
 		{
-			return GameCompUtil.gameComp_cropData.GetCropData(crop).CurLevel.ToString();
+			CropData cropData = GameCompUtil.gameComp_cropData.GetCropData(crop);
+			return $"{cropData.CurLevel} / {cropData.maxLevel}";
 		}
 	}
 }
