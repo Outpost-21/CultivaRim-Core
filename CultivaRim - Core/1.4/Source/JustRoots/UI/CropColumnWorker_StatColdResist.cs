@@ -9,9 +9,9 @@ using Verse;
 
 namespace CultivaRim
 {
-    public class CropColumnWorker_StatColdResist : CropColumnWorker_Text
+    public class CropColumnWorker_StatColdResist : CropColumnWorker_StatBase
 	{
-		protected override TextAnchor Anchor => TextAnchor.MiddleCenter;
+		public override TextAnchor Anchor => TextAnchor.MiddleCenter;
 
 		public override int GetMinWidth(CropTable table)
 		{
@@ -23,9 +23,14 @@ namespace CultivaRim
 			return GameCompUtil.gameComp_cropData.GetCropData(a).coldBoosts.CompareTo(GameCompUtil.gameComp_cropData.GetCropData(b).coldBoosts);
 		}
 
-		protected override string GetTextFor(ThingDef crop)
+		public override string GetTextFor(ThingDef crop)
 		{
 			return GameCompUtil.gameComp_cropData.GetCropData(crop).StatColdResist;
 		}
-	}
+
+        public override void IncrementValue(ThingDef crop)
+        {
+			GameCompUtil.gameComp_cropData.GetCropData(crop).coldBoosts++;
+        }
+    }
 }

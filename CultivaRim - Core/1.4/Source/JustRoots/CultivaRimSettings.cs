@@ -13,6 +13,17 @@ namespace CultivaRim
     {
         public bool verboseLogging = false;
 
+        // Levelling settings
+        public float lvlConstant = 0.07f;
+        public float lvlPower = 2;
+
+        // Stat Constants
+        public float stat_growthSpeed = 0.05f;
+        public float stat_productYield = 0.05f;
+        public float stat_coldResist = 0.05f;
+        public float stat_heatResist = 0.05f;
+        public float stat_rainGrowth = 0.05f;
+
         public override void ExposeData()
         {
             base.ExposeData();

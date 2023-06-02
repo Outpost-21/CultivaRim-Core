@@ -21,10 +21,10 @@ namespace CultivaRim
             if (cropData != null && !cropData.Cultivated)
             {
                 // Get mature immature graphic if available
-                if (cropData.WildCropImmatureGraphic != null && !__instance.HarvestableNow)
-                { __result = cropData.WildCropImmatureGraphic; return; }
-                if (cropData.WildCropGraphic != null)
-                { __result = cropData.WildCropGraphic; return; }
+                if (cropData.wildCropImmatureGraphic != null && !__instance.HarvestableNow)
+                { __result = cropData.wildCropImmatureGraphic; return; }
+                if (cropData.wildCropGraphic != null)
+                { __result = cropData.wildCropGraphic; return; }
             }
         }
     }

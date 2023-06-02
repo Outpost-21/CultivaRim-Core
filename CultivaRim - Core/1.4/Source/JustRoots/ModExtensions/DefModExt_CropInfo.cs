@@ -14,6 +14,9 @@ namespace CultivaRim
         public string wildCropPath;
         public string wildCropImmaturePath;
 
+        public string toxWildCropPath;
+        public string toxWildCropImmaturePath;
+
         public int cultivatedLevel = 5;
 
         public bool unlockedByProduct = true;
