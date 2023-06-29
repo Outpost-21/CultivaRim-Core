@@ -1,1 +1,0 @@
-// TODO: Patch all vanilla crops to be handled fully with wild variants. (Requires Textures)
