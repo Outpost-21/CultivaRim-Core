@@ -13,7 +13,7 @@ namespace CultivaRim
     {
         public static Dictionary<ThingDef, List<ThingDef>> cropDropDict = new Dictionary<ThingDef, List<ThingDef>>();
 
-        public static List<ThingDef> CalculateCropFromHarvestable(ThingDef harvested)
+        public static List<ThingDef> CalculateCropFromHarvestable(this ThingDef harvested)
         {
             if (cropDropDict.NullOrEmpty())
             {
@@ -35,6 +35,48 @@ namespace CultivaRim
             }
 
             return cropDropDict[harvested];
+        }
+
+        public static CropData CropData(this ThingDef crop)
+        {
+            return GameCompUtil.gameComp_cropData.GetCropData(crop);
+        }
+
+        public static void CropUnlock(this ThingDef crop)
+        {
+            crop.CropData().known = true;
+        }
+
+        public static float CropGrowthBonus(this ThingDef crop, bool raining = false)
+        {
+            CropData data = crop.CropData();
+            float result = data.StatGrowthSpeedRaw;
+            if (raining)
+            {
+                result += data.StatRainGrowthRaw;
+            }
+            return result;
+        }
+
+        public static float CropYieldBonus(this ThingDef crop)
+        {
+            CropData data = crop.CropData();
+            float result = data.StatProductYieldRaw;
+            return result;
+        }
+
+        public static float CropHeatResistBonus(this ThingDef crop)
+        {
+            CropData data = crop.CropData();
+            float result = data.StatHeatResistRaw;
+            return result;
+        }
+
+        public static float CropColdResistBonus(this ThingDef crop)
+        {
+            CropData data = crop.CropData();
+            float result = data.StatColdResistRaw;
+            return result;
         }
     }
 }

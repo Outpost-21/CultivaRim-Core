@@ -199,7 +199,7 @@ namespace CultivaRim
 				{
 					GUI.DrawTexture(rect3, TexUI.HighlightTex);
 				}
-				if (!GameCompUtil.gameComp_cropData.GetCropData(cachedCrops[m]).known)
+				if (!cachedCrops[m].CropData().known)
 				{
 					GUI.color = Color.gray;
 					Widgets.DrawLineHorizontal(0f, rect3.center.y, viewRect.width);

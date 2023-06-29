@@ -37,10 +37,10 @@ namespace CultivaRim
 				GUI.DrawTexture(rect2, TexUI.HighlightTex);
 			}
 			string text = crop.LabelCap;
-			int unspentPoints = GameCompUtil.gameComp_cropData.GetCropData(crop).UnspentPoints;
+			int unspentPoints = crop.CropData().UnspentPoints;
 			if (unspentPoints > 0)
             {
-				text += $" ({GameCompUtil.gameComp_cropData.GetCropData(crop).UnspentPoints} Unspent Points)";
+				text += $" ({crop.CropData().UnspentPoints} Unspent Points)";
 
 			}
 			if (rect3.width != labelCacheForWidth)

@@ -37,7 +37,7 @@ namespace CultivaRim
 			Text.WordWrap = false;
 			WidgetRow widgetRow = new WidgetRow(rect2.x, rect2.y, UIDirection.RightThenUp);
 			widgetRow.Label(textFor);
-            if (GameCompUtil.gameComp_cropData.GetCropData(crop).UnspentPoints > 0)
+            if (crop.CropData().UnspentPoints > 0)
             {
 				if (widgetRow.ButtonIcon(TexButton.Plus))
 				{

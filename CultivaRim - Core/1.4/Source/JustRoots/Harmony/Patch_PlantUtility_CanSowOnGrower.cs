@@ -16,7 +16,7 @@ namespace CultivaRim
         [HarmonyPostfix]
         public static void Postfix(ThingDef plantDef, object obj, ref bool __result)
         {
-            if (!GameCompUtil.gameComp_cropData.GetCropData(plantDef).known)
+            if (!plantDef.CropData().known)
             {
                 __result = false;
             }

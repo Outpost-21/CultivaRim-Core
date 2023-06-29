@@ -14,7 +14,7 @@ namespace CultivaRim
 		protected override IEnumerable<ThingDef> LabelSortFunction(IEnumerable<ThingDef> input)
 		{
 			return from p in input
-				   where GameCompUtil.gameComp_cropData.GetCropData(p).known
+				   where p.CropData().known
 				   orderby p.label
 				   select p;
 		}

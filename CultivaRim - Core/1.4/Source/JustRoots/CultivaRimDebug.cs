@@ -16,7 +16,7 @@ namespace CultivaRim
         {
             foreach(ThingDef crop in DefDatabase<ThingDef>.AllDefs.Where(td => td.IsPlant && td.plant.Harvestable))
             {
-                GameCompUtil.gameComp_cropData.UnlockCrop(crop);
+                crop.CropUnlock();
             }
         }
         [DebugAction("CultivaRim", "Unlock Crop...", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
@@ -28,11 +28,11 @@ namespace CultivaRim
         public static List<DebugMenuOption> DebugOptions_GetAllCropsForUnlocking()
         {
             List<DebugMenuOption> list = new List<DebugMenuOption>();
-            foreach (ThingDef crop in DefDatabase<ThingDef>.AllDefs.Where(td => td.IsPlant && td.plant.Harvestable && !GameCompUtil.gameComp_cropData.GetCropData(td).known))
+            foreach (ThingDef crop in DefDatabase<ThingDef>.AllDefs.Where(td => td.IsPlant && td.plant.Harvestable && !td.CropData().known))
             {
                 list.Add(new DebugMenuOption(crop.LabelCap, DebugMenuOptionMode.Action, delegate
                 {
-                    GameCompUtil.gameComp_cropData.UnlockCrop(crop);
+                    crop.CropUnlock();
                 }));
             }
             return list;

@@ -28,7 +28,7 @@ namespace CultivaRim
 			}
 			else { c = ((Thing)settable).Position; }
 			ThingDef plantDef = WorkGiver_Grower.CalculateWantedPlantDef(c, pawn.Map);
-			if (!GameCompUtil.gameComp_cropData.GetCropData(plantDef).known)
+			if (!plantDef.CropData().known)
             {
 				__result = false;
             }

@@ -41,7 +41,7 @@ namespace CultivaRim
             get
             {
                 if (LifeStage == PlantLifeStage.Sowing) { return base.Graphic; }
-                CropData cropData = GameCompUtil.gameComp_cropData.GetCropData(def);
+                CropData cropData = def.CropData();
                 if (cropData != null && !cropData.Cultivated)
                 {
                     if (PositionHeld.IsPolluted(MapHeld))
@@ -62,8 +62,6 @@ namespace CultivaRim
                 return base.Graphic;
             }
         }
-
-        public override float GrowthRate => base.GrowthRate + (base.GrowthRate * GameCompUtil.gameComp_cropData.GetCropData(def).StatGrowthSpeedRaw);
 
         public PlantAdv()
         {

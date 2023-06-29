@@ -16,11 +16,11 @@ namespace CultivaRim
         [HarmonyPostfix]
         public static void Postfix(Pawn worker, Thing harvested)
         {
-            List<ThingDef> crops = CropUtil.CalculateCropFromHarvestable(harvested.def);
+            List<ThingDef> crops = harvested.def.CalculateCropFromHarvestable();
             for (int i = 0; i < crops.Count; i++)
             {
-                GameCompUtil.gameComp_cropData.UnlockCrop(crops[i]);
-                GameCompUtil.gameComp_cropData.GetCropData(crops[i]).AddExperience(2f, worker);
+                crops[i].CropUnlock();
+                crops[i].CropData().AddExperience(2f, worker);
             }
         }
     }

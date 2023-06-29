@@ -84,7 +84,7 @@
   <ItemGroup>
     <Compile Include="CultivaRimDebug.cs" />
     <Compile Include="Data\CropTrait.cs" />
-    <None Include="Harmony\Patch_Plant_Graphic.cs" />
+    <Compile Include="Harmony\Patch_Plant_GrowthRate.cs" />
     <Compile Include="ModExtensions\DefModExt_CropInfo.cs" />
     <Compile Include="Defs\CropTraitDef.cs" />
     <Compile Include="CropTraitWorker\CropTraitWorker.cs" />

@@ -20,12 +20,12 @@ namespace CultivaRim
 
 		public override int Compare(ThingDef a, ThingDef b)
 		{
-			return GameCompUtil.gameComp_cropData.GetCropData(a).CurLevel.CompareTo(GameCompUtil.gameComp_cropData.GetCropData(b).CurLevel);
+			return a.CropData().CurLevel.CompareTo(b.CropData().CurLevel);
 		}
 
 		protected override string GetTextFor(ThingDef crop)
 		{
-			CropData cropData = GameCompUtil.gameComp_cropData.GetCropData(crop);
+			CropData cropData = crop.CropData();
 			return $"{cropData.CurLevel} / {cropData.maxLevel}";
 		}
 	}

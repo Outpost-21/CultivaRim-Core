@@ -41,12 +41,6 @@ namespace CultivaRim
             return cropData[crop.defName];
         }
 
-        public void UnlockCrop(ThingDef crop)
-        {
-            CropData data = GetCropData(crop);
-            data.known = true;
-        }
-
         public void StartRespec(ThingDef crop)
         {
             respecProgress.Add(crop.defName, GetCropData(crop).CurLevel * 1000);

@@ -20,7 +20,7 @@ namespace CultivaRim
 
 		public override void DoCell(Rect rect, ThingDef crop, CropTable table)
 		{
-			CropData data = GameCompUtil.gameComp_cropData.GetCropData(crop);
+			CropData data = crop.CropData();
 			Widgets.FillableBar(rect.ContractedBy(4f), data.CurLevelPercentage, EnergyBarTex, BaseContent.ClearTex, doBorder: false);
 			Text.Font = GameFont.Small;
 			Text.Anchor = TextAnchor.MiddleCenter;

@@ -20,17 +20,17 @@ namespace CultivaRim
 
 		public override int Compare(ThingDef a, ThingDef b)
 		{
-			return GameCompUtil.gameComp_cropData.GetCropData(a).speedBoosts.CompareTo(GameCompUtil.gameComp_cropData.GetCropData(b).speedBoosts);
+			return a.CropData().speedBoosts.CompareTo(b.CropData().speedBoosts);
 		}
 
 		public override string GetTextFor(ThingDef crop)
 		{
-			return GameCompUtil.gameComp_cropData.GetCropData(crop).StatGrowthSpeed;
+			return crop.CropData().StatGrowthSpeed;
 		}
 
 		public override void IncrementValue(ThingDef crop)
 		{
-			GameCompUtil.gameComp_cropData.GetCropData(crop).speedBoosts++;
+			crop.CropData().speedBoosts++;
 		}
 	}
 }

@@ -18,8 +18,8 @@ namespace CultivaRim
         {
             if(__instance.Plant != null && __instance.sowWorkDone >= __instance.Plant.def.plant.sowWork)
             {
-                GameCompUtil.gameComp_cropData.UnlockCrop(__instance.Plant.def);
-                GameCompUtil.gameComp_cropData.GetCropData(__instance.Plant.def).AddExperience(2f, __instance.pawn);
+                __instance.Plant.def.CropUnlock();
+                __instance.Plant.def.CropData().AddExperience(2f, __instance.pawn);
             }
         }
     }
