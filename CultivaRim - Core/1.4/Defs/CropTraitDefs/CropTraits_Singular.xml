@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_DarkGrowth</defName>
+		<label>dark growth</label>
+		<description>Allows a plant to grow without sunlight that normally requires it.</description>
+		<graphicData>
+			<texPath>CultivaRim/TraitIcons/Trait_DarkGrowth</texPath>
+		</graphicData>
+		<repeatable>false</repeatable>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_SunGrowth</defName>
+		<label>sun growth</label>
+		<description>Allows a plant to grow with sunlight that normally requires darkness.</description>
+		<graphicData>
+			<texPath>CultivaRim/TraitIcons/Trait_SunGrowth</texPath>
+		</graphicData>
+		<repeatable>false</repeatable>
+	</CultivaRim.CropTraitDef>
+	
+</Defs>

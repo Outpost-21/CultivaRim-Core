@@ -11,94 +11,58 @@ namespace CultivaRim
 {
     public class PlantAdv : Plant
     {
-        public DefModExt_CropInfo modExt;
-        public DefModExt_CropInfo ModExt
+        public Comp_CropInfo cropComp;
+        public Comp_CropInfo CropComp
         {
             get
             {
-                if (modExt == null)
+                if (cropComp == null)
                 {
                     try
                     {
-                        modExt = def.GetModExtension<DefModExt_CropInfo>();
+                        cropComp = this.TryGetComp<Comp_CropInfo>();
                     }
                     catch (Exception ex)
                     {
-                        LogUtil.LogError($"No DefModExt_CropInfo found on def {def} with class PlantAdv, the extension is required for functionality of that class.\n\nException:\n" + ex.Message);
+                        LogUtil.LogWarning($"No Comp_CropInfo found on def {def.defName} with class PlantAdv, the comp is required for functionality of that class.\n\nException:\n" + ex.Message);
                     }
                 }
-                return modExt;
+                return cropComp;
             }
         }
-
-        public Graphic wildCropGraphic;
-        public Graphic wildCropImmatureGraphic;
-        public Graphic toxWildCropGraphic;
-        public Graphic toxWildCropImmatureGraphic;
 
         public override Graphic Graphic
         {
             get
             {
-                if (LifeStage == PlantLifeStage.Sowing) { return base.Graphic; }
+                //if (LifeStage == PlantLifeStage.Sowing) { return base.Graphic; }
                 CropData cropData = def.CropData();
-                if (cropData != null && !cropData.Cultivated)
+                if (cropData != null && !cropData.Cultivated && CropComp != null)
                 {
                     if (PositionHeld.IsPolluted(MapHeld))
                     {
-                        if (toxWildCropImmatureGraphic != null && !HarvestableNow)
-                        { return toxWildCropImmatureGraphic; }
-                        if (toxWildCropGraphic != null)
-                        { return toxWildCropGraphic; }
+                        if (CropComp?.toxWildCropImmatureGraphic != null && !HarvestableNow)
+                        { return CropComp?.toxWildCropImmatureGraphic; }
+                        if (CropComp?.toxWildCropGraphic != null)
+                        { return CropComp?.toxWildCropGraphic; }
                     }
                     else
                     {
-                        if (wildCropImmatureGraphic != null && !HarvestableNow)
-                        { return wildCropImmatureGraphic; }
-                        if (wildCropGraphic != null)
-                        { return wildCropGraphic; }
+                        if (CropComp?.wildCropImmatureGraphic != null && !HarvestableNow)
+                        { return CropComp?.wildCropImmatureGraphic; }
+                        if (CropComp?.wildCropGraphic != null)
+                        { return CropComp?.wildCropGraphic; }
                     }
                 }
                 return base.Graphic;
             }
         }
 
+        public override string Label => def.CropData().Cultivated ? base.Label : "CultivaRim.WildPrefix".Translate(base.Label);
+
         public PlantAdv()
         {
-            InitWildCropGraphic();
-            InitWildCropImmatureGraphic();
-        }
 
-        public void InitWildCropGraphic()
-        {
-            if (wildCropGraphic == null && (!ModExt?.wildCropPath?.NullOrEmpty() ?? false))
-            {
-                wildCropGraphic = GraphicDatabase.Get(def.graphicData.graphicClass, ModExt.wildCropPath, def.graphic.Shader, def.graphicData.drawSize, def.graphicData.color, def.graphicData.colorTwo);
-            }
-        }
-
-        public void InitWildCropImmatureGraphic()
-        {
-            if (wildCropImmatureGraphic == null && (!ModExt?.wildCropImmaturePath?.NullOrEmpty() ?? false))
-            {
-                wildCropImmatureGraphic = GraphicDatabase.Get(def.graphicData.graphicClass, ModExt.wildCropImmaturePath, def.graphic.Shader, def.graphicData.drawSize, def.graphicData.color, def.graphicData.colorTwo);
-            }
-        }
-
-        public void InitToxWildCropGraphic()
-        {
-            if (toxWildCropGraphic == null && (!ModExt?.toxWildCropPath?.NullOrEmpty() ?? false))
-            {
-                toxWildCropGraphic = GraphicDatabase.Get(def.graphicData.graphicClass, ModExt.toxWildCropPath, def.graphic.Shader, def.graphicData.drawSize, def.graphicData.color, def.graphicData.colorTwo);
-            }
-        }
-
-        public void InitToxWildCropImmatureGraphic()
-        {
-            if (toxWildCropImmatureGraphic == null && (!ModExt?.toxWildCropImmaturePath?.NullOrEmpty() ?? false))
-            {
-                toxWildCropImmatureGraphic = GraphicDatabase.Get(def.graphicData.graphicClass, ModExt.toxWildCropImmaturePath, def.graphic.Shader, def.graphicData.drawSize, def.graphicData.color, def.graphicData.colorTwo);
-            }
         }
     }
 }

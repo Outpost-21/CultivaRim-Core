@@ -9,8 +9,16 @@ using Verse;
 
 namespace CultivaRim
 {
-    public class CropTrait
+    public class CropTrait : IExposable
     {
         public CropTraitDef def;
+
+        public int count = 1;
+
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref def, "def");
+            Scribe_Values.Look(ref count, "count");
+        }
     }
 }

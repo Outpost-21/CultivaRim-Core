@@ -9,11 +9,10 @@ using Verse;
 
 namespace CultivaRim
 {
-    public class DefModExt_CropInfo : DefModExtension
+    public class CompProperties_CropInfo : CompProperties
     {
         public string wildCropPath;
         public string wildCropImmaturePath;
-
         public string toxWildCropPath;
         public string toxWildCropImmaturePath;
 
@@ -31,5 +30,10 @@ namespace CultivaRim
         public bool biomeLockedPlanting = false;
 
         public List<ThingDef> secondaryProducts = new List<ThingDef>();
+
+        public CompProperties_CropInfo()
+        {
+            compClass = typeof(Comp_CropInfo);
+        }
     }
 }

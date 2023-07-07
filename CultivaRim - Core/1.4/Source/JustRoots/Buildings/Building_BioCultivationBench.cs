@@ -9,16 +9,7 @@ using Verse;
 
 namespace CultivaRim
 {
-    public abstract class CropTraitWorker
+    public class Building_BioCultivationBench : Building
     {
-        public virtual void OnHarvest()
-        {
-
-        }
-
-        public virtual void Tick()
-        {
-
-        }
     }
 }

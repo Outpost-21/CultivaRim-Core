@@ -19,7 +19,7 @@ namespace CultivaRim
             {
                 foreach(ThingDef thing in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsPlant && t.plant.harvestedThingDef != null))
                 {
-                    DefModExt_CropInfo modExt = thing.GetModExtension<DefModExt_CropInfo>();
+                    CompProperties_CropInfo modExt = thing.GetCompProperties<CompProperties_CropInfo>();
                     if (modExt == null || modExt.unlockedByProduct)
                     {
                         if (!cropDropDict.ContainsKey(thing.plant.harvestedThingDef))

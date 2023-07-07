@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-	
+	<ThingDef ParentName="BenchBase">
+		<defName>CultivaRim_BioCultivationBench</defName>
+		<label>bio cultivation bench</label>
+		<description>A simple bench tools for researching crops. Plant workers will use this to learn new ways to enhance crops.</description>
+		<thingClass>CultivaRim.Building_BioCultivationBench</thingClass>
+		<graphicData>
+			<texPath>CultivaRim/Buildings/BioCultivationBench</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3.5, 3.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<size>(3,1)</size>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+			<Steel>25</Steel>
+		</costList>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>2800</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<ResearchSpeedFactor>0.75</ResearchSpeedFactor>
+		</statBases>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<fillPercent>0.5</fillPercent>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
+		<designationCategory>Production</designationCategory>
+		<uiOrder>2600</uiOrder>
+		<surfaceType>Item</surfaceType>
+		<building>
+			<paintable>true</paintable>
+		</building>
+	</ThingDef>
 
 </Defs>

@@ -9,9 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CultivaRim</RootNamespace>
     <AssemblyName>CultivaRim</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>Latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -82,12 +84,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buildings\Building_BioCultivationBench.cs" />
+    <Compile Include="Comps\Comp_CropInfo.cs" />
     <Compile Include="CultivaRimDebug.cs" />
+    <Compile Include="CultivaRimStartup.cs" />
     <Compile Include="Data\CropTrait.cs" />
     <Compile Include="Harmony\Patch_Plant_GrowthRate.cs" />
-    <Compile Include="ModExtensions\DefModExt_CropInfo.cs" />
+    <Compile Include="Comps\CompProperties_CropInfo.cs" />
     <Compile Include="Defs\CropTraitDef.cs" />
-    <Compile Include="CropTraitWorker\CropTraitWorker.cs" />
     <Compile Include="CultivaRimDefOf.cs" />
     <Compile Include="Data\PlantAdv.cs" />
     <Compile Include="UI\CropColumnWorker_Label.cs" />
@@ -117,7 +121,6 @@
     <Compile Include="Utilities\GameCompUtil.cs" />
     <Compile Include="Harmony\Patch_JobDriver_PlantSow_MakeNewToils.cs" />
     <Compile Include="Utilities\SettingsUtil.cs" />
-    <Compile Include="Data\CultivaRimSettingsPage.cs" />
     <Compile Include="Utilities\LogUtil.cs" />
     <Compile Include="PatchOperations\PatchOperation_SettingActive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

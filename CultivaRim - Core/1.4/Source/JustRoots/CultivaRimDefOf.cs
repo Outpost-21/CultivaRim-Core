@@ -18,5 +18,7 @@ namespace CultivaRim
         }
 
         public static CropTableDef CultivaRim_Crops;
+
+        public static ShaderTypeDef CutoutPlant;
     }
 }

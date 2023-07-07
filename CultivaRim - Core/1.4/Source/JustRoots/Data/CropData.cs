@@ -12,29 +12,28 @@ namespace CultivaRim
     public class CropData : IExposable
     {
         public ThingDef plantDef;
-        public DefModExt_CropInfo modExt;
-        public DefModExt_CropInfo ModExt
+        public CompProperties_CropInfo compProps;
+        public CompProperties_CropInfo CompProps
         {
             get
             {
-                if (modExt == null)
+                if (compProps == null)
                 {
-                    DefModExt_CropInfo modExtInt = plantDef.GetModExtension<DefModExt_CropInfo>();
+                    CompProperties_CropInfo modExtInt = plantDef.GetCompProperties<CompProperties_CropInfo>();
                     if (modExtInt == null)
                     {
-                        modExt = new DefModExt_CropInfo();
+                        compProps = new CompProperties_CropInfo();
                     }
                     else
                     {
-                        modExt = modExtInt;
+                        compProps = modExtInt;
                     }
                 }
-                return modExt;
+                return compProps;
             }
         }
 
         public bool known = false;
-        public bool wild = false;
         public float exp = 0f;
         public int curLevel = 0;
         public int maxLevel = 10;
@@ -90,7 +89,7 @@ namespace CultivaRim
 
         public int TraitUnlocks => Mathf.FloorToInt(CurLevel / 5);
 
-        public bool Cultivated => ModExt.cultivatedLevel < CurLevel;
+        public bool Cultivated => CompProps.cultivatedLevel < CurLevel;
 
         public void AddExperience(float exp, Pawn pawn = null, bool intelligenceMatters = false)
         {
@@ -142,7 +141,6 @@ namespace CultivaRim
             Scribe_Defs.Look(ref plantDef, "plantDef");
 
             Scribe_Values.Look(ref known, "known");
-            Scribe_Values.Look(ref wild, "wild");
             Scribe_Values.Look(ref exp, "exp");
             Scribe_Values.Look(ref curLevel, "curLevel");
             Scribe_Values.Look(ref maxLevel, "maxLevel");

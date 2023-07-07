@@ -37,7 +37,7 @@ namespace CultivaRim
                 return;
             }
             UnityEngine.Debug.Log(msg);
-            Log.messageQueue.Enqueue(new LogMessage(LogMessageType.Message, $"{msgPrefix.Colorize(wrnColor)} {msg}", StackTraceUtility.ExtractStackTrace()));
+            Log.messageQueue.Enqueue(new LogMessage(LogMessageType.Warning, $"{msgPrefix.Colorize(wrnColor)} {msg}", StackTraceUtility.ExtractStackTrace()));
             Log.PostMessage();
         }
 
@@ -48,7 +48,7 @@ namespace CultivaRim
                 return;
             }
             UnityEngine.Debug.Log(msg);
-            Log.messageQueue.Enqueue(new LogMessage(LogMessageType.Message, $"{msgPrefix.Colorize(errColor)} {msg}", StackTraceUtility.ExtractStackTrace()));
+            Log.messageQueue.Enqueue(new LogMessage(LogMessageType.Error, $"{msgPrefix.Colorize(errColor)} {msg}", StackTraceUtility.ExtractStackTrace()));
             Log.PostMessage();
         }
     }

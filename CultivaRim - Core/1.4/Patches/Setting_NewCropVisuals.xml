@@ -6,7 +6,6 @@
 			<li>newCropVisuals</li>
 		</settings>
 		<active Class="PatchOperationSequence">
-			<success>Always</success>
 			<operations>
 				<!-- ========= Corn ========= -->
 				<li Class="PatchOperationAdd">
@@ -14,6 +13,29 @@
 					<value>
 						<thingClass>CultivaRim.PlantAdv</thingClass>
 					</value>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThingDef[defName="Plant_Corn"]/comps</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="Plant_Corn"]/comps</xpath>
+						<value>
+							<li Class="CultivaRim.CompProperties_CropInfo">
+								<wildCropPath>CultivaRim/Plants/WildCornPlant</wildCropPath>
+								<wildCropImmaturePath>CultivaRim/Plants/WildCornPlant_Immature</wildCropImmaturePath>
+							</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="Plant_Corn"]</xpath>
+						<value>
+							<comps>
+								<li Class="CultivaRim.CompProperties_CropInfo">
+									<wildCropPath>CultivaRim/Plants/WildCornPlant</wildCropPath>
+									<wildCropImmaturePath>CultivaRim/Plants/WildCornPlant_Immature</wildCropImmaturePath>
+								</li>
+							</comps>
+						</value>
+					</nomatch>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/ThingDef[defName="Plant_Corn"]/graphicData/texPath</xpath>
@@ -27,15 +49,6 @@
 						<immatureGraphicPath>CultivaRim/Plants/CornPlant_Immature</immatureGraphicPath>
 					</value>
 				</li>
-				<li Class="PatchOperationAddModExtension">
-					<xpath>/Defs/ThingDef[defName="Plant_Corn"]</xpath>
-					<value>
-						<li Class="CultivaRim.DefModExt_CropInfo">
-							<wildCropPath>CultivaRim/Plants/WildCornPlant</wildCropPath>
-							<wildCropImmaturePath>CultivaRim/Plants/WildCornPlant_Immature</wildCropImmaturePath>
-						</li>
-					</value>
-				</li>
 				<!-- ========= Potato ========= -->
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThingDef[defName="Plant_Potato"]</xpath>
@@ -43,18 +56,31 @@
 						<thingClass>CultivaRim.PlantAdv</thingClass>
 					</value>
 				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThingDef[defName="Plant_Potato"]/comps</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="Plant_Potato"]/comps</xpath>
+						<value>
+							<li Class="CultivaRim.CompProperties_CropInfo">
+								<wildCropPath>CultivaRim/Plants/WildPotatoPlant</wildCropPath>
+							</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="Plant_Potato"]</xpath>
+						<value>
+							<comps>
+								<li Class="CultivaRim.CompProperties_CropInfo">
+									<wildCropPath>CultivaRim/Plants/WildPotatoPlant</wildCropPath>
+								</li>
+							</comps>
+						</value>
+					</nomatch>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/ThingDef[defName="Plant_Potato"]/graphicData/texPath</xpath>
 					<value>
 						<texPath>CultivaRim/Plants/PotatoPlant</texPath>
-					</value>
-				</li>
-				<li Class="PatchOperationAddModExtension">
-					<xpath>/Defs/ThingDef[defName="Plant_Potato"]</xpath>
-					<value>
-						<li Class="CultivaRim.DefModExt_CropInfo">
-							<wildCropPath>CultivaRim/Plants/WildPotatoPlant</wildCropPath>
-						</li>
 					</value>
 				</li>
 			</operations>
