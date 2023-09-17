@@ -10,8 +10,9 @@
 			<li>CultivaRim_Experience</li>
 			<li>CultivaRim_ProductYield</li>
 			<li>CultivaRim_GrowthSpeed</li>
-			<li>CultivaRim_HeatResist</li>
-			<li>CultivaRim_ColdResist</li>
+			<li>CultivaRim_RainGrowthBoost</li>
+			<li>CultivaRim_Traits</li>
+			<li>CultivaRim_TraitSelect</li>
 		</columns>
 	</CultivaRim.CropTableDef>
 

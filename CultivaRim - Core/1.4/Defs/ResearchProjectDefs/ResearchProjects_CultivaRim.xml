@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>CultivaRim_CropEngineering</defName>
+		<label>crop engineering</label>
+		<description>Allows further control over the genetic manipulation of crops, giving access to crop traits every ten levels and a choosable stat increase every crop level instead of every other level.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Medieval</techLevel>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>4.25</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

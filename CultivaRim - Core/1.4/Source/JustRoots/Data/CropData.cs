@@ -40,27 +40,28 @@ namespace CultivaRim
 
         public int speedBoosts = 0;
         public int yieldBoosts = 0;
-        public int heatBoosts = 0;
-        public int coldBoosts = 0;
         public int rainBoosts = 0;
 
         public float StatGrowthSpeedRaw => speedBoosts * CultivaRimMod.settings.stat_growthSpeed;
         public string StatGrowthSpeed => "+" + (StatGrowthSpeedRaw).ToStringPercent();
         public float StatProductYieldRaw => speedBoosts * CultivaRimMod.settings.stat_productYield;
         public string StatProductYield => "+" + (StatProductYieldRaw).ToStringPercent();
-        public float StatHeatResistRaw => speedBoosts * CultivaRimMod.settings.stat_heatResist;
-        public string StatHeatResist => "+" + (StatHeatResistRaw).ToStringTemperature();
-        public float StatColdResistRaw => speedBoosts * CultivaRimMod.settings.stat_coldResist;
-        public string StatColdResist => "+" + (StatColdResistRaw).ToStringTemperature();
         public float StatRainGrowthRaw => speedBoosts * CultivaRimMod.settings.stat_rainGrowth;
         public string StatRainGrowth => "+" + (StatRainGrowthRaw).ToStringPercent();
 
-        //public bool hydroponics = false;
-        //public bool blightFree = false;
-        //public bool autoReplant = false;
-        //public bool lightIgnored = false;
-
         public List<CropTrait> cropTraits = new List<CropTrait>();
+
+        public void AddTrait(CropTrait trait)
+        {
+            if(cropTraits.Any(t => t.def == trait.def))
+            {
+                LogUtil.LogError("Attempted to give a crop a trait it already has.");
+            }
+            cropTraits.Add(trait);
+            nextTraitDefSelection = null;
+        }
+
+        public bool CanUpgrade => CurLevel >= maxLevel;
 
         public float Exp 
         {
@@ -85,14 +86,18 @@ namespace CultivaRim
 
         public float CurLevelPercentage => Exp / ExpForNextLevel;
 
-        public int UnspentPoints => CurLevel - (speedBoosts + yieldBoosts + heatBoosts + coldBoosts + rainBoosts);
+        public int UnspentPoints => CurLevel - (speedBoosts + yieldBoosts + rainBoosts);
 
-        public int TraitUnlocks => Mathf.FloorToInt(CurLevel / 5);
+        public int TraitUnlocks => Mathf.FloorToInt(CurLevel / 10) - cropTraits.Count;
 
         public bool Cultivated => CompProps.cultivatedLevel < CurLevel;
 
         public void AddExperience(float exp, Pawn pawn = null, bool intelligenceMatters = false)
         {
+            if (CurLevel >= maxLevel)
+            {
+                return;
+            }
             if (pawn != null && pawn.skills != null)
             {
                 float result = exp;
@@ -113,10 +118,10 @@ namespace CultivaRim
         {
             Exp = Exp - ExpForNextLevel;
             curLevel++;
-            bool cropEngineeringCompleted = DefDatabase<ResearchProjectDef>.GetNamed("CultivaRim_CropEngineering").IsFinished;
+            bool cropEngineeringCompleted = CultivaRimDefOf.CultivaRim_CropEngineering.IsFinished;
             if (!cropEngineeringCompleted && CurLevel % 2 == 0)
             {
-                int num = Rand.RangeInclusive(1, 4);
+                int num = Rand.RangeInclusive(1, 3);
                 switch (num)
                 {
                     case 1:
@@ -125,15 +130,55 @@ namespace CultivaRim
                     case 2:
                         yieldBoosts += 1;
                         break;
-                    case 3:
-                        coldBoosts += 1;
-                        break;
                     default:
-                        heatBoosts += 1;
+                        rainBoosts += 1;
                         break;
                 }
             }
             Messages.Message("CultivaRim.CropKnowledgeLevelUp".Translate(plantDef.LabelCap, CurLevel), MessageTypeDefOf.TaskCompletion);
+        }
+
+        public List<CropTraitDef> nextTraitDefSelection = new List<CropTraitDef>();
+
+        public List<CropTraitDef> NextTraitDefSelection
+        {
+            get
+            {
+                if (nextTraitDefSelection.NullOrEmpty())
+                {
+                    List<CropTraitDef> allViable = DefDatabase<CropTraitDef>.AllDefs.Where(t => !cropTraits.Any(ct => ct.def == t)).ToList();
+
+                    if (!allViable.NullOrEmpty())
+                    {
+                        nextTraitDefSelection = PickRandomTraits(allViable, allViable.Count > 3 ? 3 : allViable.Count);
+                    }
+                    else
+                    {
+                        return new List<CropTraitDef>();
+                    }
+                }
+                return nextTraitDefSelection;
+            }
+        }
+
+        public bool anyTraitsLeftToSelect => NextTraitDefSelection.Count > 0;
+
+        public List<CropTraitDef> PickRandomTraits(List<CropTraitDef> input, int quantity)
+        {
+            if (input.Count == quantity)
+            {
+                return input;
+            }
+            List<CropTraitDef> output = new List<CropTraitDef>();
+            while (output.Count < 3)
+            {
+                CropTraitDef randomTrait = input.RandomElement();
+                if (!output.Contains(randomTrait))
+                {
+                    output.Add(randomTrait);
+                }
+            }
+            return output;
         }
 
         public void ExposeData()
@@ -147,11 +192,10 @@ namespace CultivaRim
 
             Scribe_Values.Look(ref speedBoosts, "speedBoosts");
             Scribe_Values.Look(ref yieldBoosts, "yieldBoosts");
-            Scribe_Values.Look(ref heatBoosts, "heatBoosts");
-            Scribe_Values.Look(ref coldBoosts, "coldBoosts");
             Scribe_Values.Look(ref rainBoosts, "rainBoosts");
 
             Scribe_Collections.Look(ref cropTraits, "cropTraits");
+            Scribe_Collections.Look(ref nextTraitDefSelection, "nextTraitDefSelection");
         }
     }
 }

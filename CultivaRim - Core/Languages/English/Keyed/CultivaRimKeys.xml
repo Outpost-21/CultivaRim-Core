@@ -3,5 +3,8 @@
 
 	<CultivaRim.CropKnowledgeLevelUp>{0} knowledge has increased to level {1}!</CultivaRim.CropKnowledgeLevelUp>
 	<CultivaRim.WildPrefix>wild</CultivaRim.WildPrefix>
+	<CultivaRim.TraitButtonLabel>Choose Trait...</CultivaRim.TraitButtonLabel>
+	<CultivaRim.UpgradeButtonLabel>Upgrade</CultivaRim.UpgradeButtonLabel>
+	<CultivaRim.SelectTrait>Select</CultivaRim.SelectTrait>
 
 </LanguageData>

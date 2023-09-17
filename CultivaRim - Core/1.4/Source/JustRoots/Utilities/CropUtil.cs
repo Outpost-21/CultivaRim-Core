@@ -65,17 +65,10 @@ namespace CultivaRim
             return result;
         }
 
-        public static float CropHeatResistBonus(this ThingDef crop)
+        public static float CropRainGrowthBonus(this ThingDef crop)
         {
             CropData data = crop.CropData();
-            float result = data.StatHeatResistRaw;
-            return result;
-        }
-
-        public static float CropColdResistBonus(this ThingDef crop)
-        {
-            CropData data = crop.CropData();
-            float result = data.StatColdResistRaw;
+            float result = data.StatRainGrowthRaw;
             return result;
         }
     }

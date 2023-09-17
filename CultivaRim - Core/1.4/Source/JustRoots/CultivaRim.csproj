@@ -96,9 +96,9 @@
     <Compile Include="Data\PlantAdv.cs" />
     <Compile Include="UI\CropColumnWorker_Label.cs" />
     <Compile Include="UI\CropColumnWorker_StatBase.cs" />
-    <Compile Include="UI\CropColumnWorker_Upgrade.cs" />
-    <Compile Include="UI\CropColumnWorker_StatColdResist.cs" />
-    <Compile Include="UI\CropColumnWorker_StatHeatResist.cs" />
+    <Compile Include="UI\CropColumnWorker_Traits.cs" />
+    <Compile Include="UI\CropColumnWorker_TraitSelect.cs" />
+    <Compile Include="UI\CropColumnWorker_StatRainGrowthBoost.cs" />
     <Compile Include="UI\CropColumnWorker_StatGrowthSpeed.cs" />
     <Compile Include="UI\CropColumnWorker_StatProductYield.cs" />
     <Compile Include="UI\CropColumnWorker_Text.cs" />
@@ -117,6 +117,7 @@
     <Compile Include="UI\CropColumnDef.cs" />
     <Compile Include="UI\CropTable.cs" />
     <Compile Include="UI\MainTabWindow_CropTable.cs" />
+    <Compile Include="UI\Window_TraitSelection.cs" />
     <Compile Include="Utilities\CropUtil.cs" />
     <Compile Include="Utilities\GameCompUtil.cs" />
     <Compile Include="Harmony\Patch_JobDriver_PlantSow_MakeNewToils.cs" />

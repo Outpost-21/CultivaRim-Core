@@ -41,16 +41,23 @@
 	</CultivaRim.CropColumnDef>
 
 	<CultivaRim.CropColumnDef>
-		<defName>CultivaRim_HeatResist</defName>
-		<label>heat</label>
-		<workerClass>CultivaRim.CropColumnWorker_StatHeatResist</workerClass>
+		<defName>CultivaRim_RainGrowthBoost</defName>
+		<label>rain growth</label>
+		<workerClass>CultivaRim.CropColumnWorker_StatRainGrowthBoost</workerClass>
 		<width>30</width>
 	</CultivaRim.CropColumnDef>
 
 	<CultivaRim.CropColumnDef>
-		<defName>CultivaRim_ColdResist</defName>
-		<label>cold</label>
-		<workerClass>CultivaRim.CropColumnWorker_StatColdResist</workerClass>
+		<defName>CultivaRim_Traits</defName>
+		<label>traits</label>
+		<workerClass>CultivaRim.CropColumnWorker_Traits</workerClass>
+		<width>30</width>
+	</CultivaRim.CropColumnDef>
+
+	<CultivaRim.CropColumnDef>
+		<defName>CultivaRim_TraitSelect</defName>
+		<label />
+		<workerClass>CultivaRim.CropColumnWorker_TraitSelect</workerClass>
 		<width>30</width>
 	</CultivaRim.CropColumnDef>
 

@@ -17,6 +17,8 @@ namespace CultivaRim
             DefOfHelper.EnsureInitializedInCtor(typeof(CultivaRimDefOf));
         }
 
+        public static ResearchProjectDef CultivaRim_CropEngineering;
+
         public static CropTableDef CultivaRim_Crops;
 
         public static ShaderTypeDef CutoutPlant;

@@ -13,12 +13,9 @@ namespace CultivaRim
     {
         public CropTraitDef def;
 
-        public int count = 1;
-
         public void ExposeData()
         {
             Scribe_Values.Look(ref def, "def");
-            Scribe_Values.Look(ref count, "count");
         }
     }
 }

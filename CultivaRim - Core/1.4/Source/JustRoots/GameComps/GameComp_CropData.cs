@@ -13,6 +13,8 @@ namespace CultivaRim
     {
         public Dictionary<string, CropData> cropData = new Dictionary<string, CropData>();
 
+        public Dictionary<string, int> upgradeProgress = new Dictionary<string, int>();
+
         public Dictionary<string, int> respecProgress = new Dictionary<string, int>();
 
         public GameComp_CropData(Game game)
@@ -46,7 +48,7 @@ namespace CultivaRim
             respecProgress.Add(crop.defName, GetCropData(crop).CurLevel * 1000);
         }
 
-        public void EndRespec(ThingDef crop)
+        public void EndRespec(ThingDef crop, bool dev = false)
         {
             if (respecProgress.ContainsKey(crop.defName))
             {
@@ -54,9 +56,36 @@ namespace CultivaRim
                 CropData data = GetCropData(crop);
                 data.speedBoosts = 0;
                 data.yieldBoosts = 0;
-                data.coldBoosts = 0;
-                data.heatBoosts = 0;
                 data.rainBoosts = 0;
+                data.cropTraits = new List<CropTrait>();
+            }
+            else if (dev)
+            {
+                CropData data = GetCropData(crop);
+                data.speedBoosts = 0;
+                data.yieldBoosts = 0;
+                data.rainBoosts = 0;
+                data.cropTraits = new List<CropTrait>();
+            }
+        }
+
+        public void StartUpgrade(ThingDef crop)
+        {
+            upgradeProgress.Add(crop.defName, GetCropData(crop).CurLevel * 1000);
+        }
+
+        public void EndUpgrade(ThingDef crop, bool dev = false)
+        {
+            if (upgradeProgress.ContainsKey(crop.defName))
+            {
+                upgradeProgress.Remove(crop.defName);
+                CropData data = GetCropData(crop);
+                data.maxLevel += 10;
+            }
+            else if (dev)
+            {
+                CropData data = GetCropData(crop);
+                data.maxLevel += 10;
             }
         }
 

@@ -9,7 +9,7 @@ using Verse;
 
 namespace CultivaRim
 {
-    public class CropColumnWorker_StatHeatResist : CropColumnWorker_StatBase
+    public class CropColumnWorker_StatRainGrowthBoost : CropColumnWorker_StatBase
 	{
 		public override TextAnchor Anchor => TextAnchor.MiddleCenter;
 
@@ -20,17 +20,17 @@ namespace CultivaRim
 
 		public override int Compare(ThingDef a, ThingDef b)
 		{
-			return a.CropData().heatBoosts.CompareTo(b.CropData().heatBoosts);
+			return a.CropData().rainBoosts.CompareTo(b.CropData().rainBoosts);
 		}
 
 		public override string GetTextFor(ThingDef crop)
 		{
-			return crop.CropData().StatHeatResist;
+			return crop.CropData().StatRainGrowth;
 		}
 
 		public override void IncrementValue(ThingDef crop)
 		{
-			crop.CropData().heatBoosts++;
+			crop.CropData().rainBoosts++;
 		}
 	}
 }

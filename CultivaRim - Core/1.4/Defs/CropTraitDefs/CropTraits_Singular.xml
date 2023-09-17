@@ -2,23 +2,73 @@
 <Defs>
 
 	<CultivaRim.CropTraitDef>
-		<defName>CultivaRim_Trait_DarkGrowth</defName>
-		<label>dark growth</label>
-		<description>Allows a plant to grow without sunlight that normally requires it.</description>
-		<graphicData>
-			<texPath>CultivaRim/TraitIcons/Trait_DarkGrowth</texPath>
-		</graphicData>
-		<repeatable>false</repeatable>
+		<defName>CultivaRim_Trait_DarknessGrowth</defName>
+		<label>darkness growth</label>
+		<description>Allows a plant that normally requires it, to grow without any light.</description>
+		<texPath>CultivaRim/Traits/Trait_DarknessGrowth</texPath>
 	</CultivaRim.CropTraitDef>
 
 	<CultivaRim.CropTraitDef>
-		<defName>CultivaRim_Trait_SunGrowth</defName>
+		<defName>CultivaRim_Trait_DarklightGrowth</defName>
+		<label>darklight growth</label>
+		<description>Allows a plant that normally requires sunlight or darkness, to grow with darklight.</description>
+		<texPath>CultivaRim/Traits/Trait_DarklightGrowth</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_SunlightGrowth</defName>
 		<label>sun growth</label>
-		<description>Allows a plant to grow with sunlight that normally requires darkness.</description>
-		<graphicData>
-			<texPath>CultivaRim/TraitIcons/Trait_SunGrowth</texPath>
-		</graphicData>
-		<repeatable>false</repeatable>
+		<description>Allows a plant that normally requires darkness, to grow with sunlight.</description>
+		<texPath>CultivaRim/Traits/Trait_SunlightGrowth</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_HeatResistant</defName>
+		<label>heat resistant</label>
+		<description>Allows a plant to survive in extreme heat, with slower growth speed.</description>
+		<texPath>CultivaRim/Traits/Trait_HeatResistant</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_ColdResistant</defName>
+		<label>cold resistant</label>
+		<description>Allows a plant to survive in extreme cold, with slower growth speed.</description>
+		<texPath>CultivaRim/Traits/Trait_ColdResistant</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_BlightResistant</defName>
+		<label>blight resistant</label>
+		<description>Prevents a plant from ever being blighted.</description>
+		<texPath>CultivaRim/Traits/Trait_BlightFree</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_FireResistant</defName>
+		<label>fire resistant</label>
+		<description>Prevents a plant from ever catching fire.</description>
+		<texPath>CultivaRim/Traits/Trait_Fireproof</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_LongLife</defName>
+		<label>long life</label>
+		<description>When a plant is ready to harvest, it typically dies fairly quickly, this extends that significantly so you have more time to harvest it.</description>
+		<texPath>CultivaRim/Traits/Trait_LongLife</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_RapidGrowth</defName>
+		<label>rapid growth</label>
+		<description>Doubles the effectiveness of growth boosts applied to the plant.</description>
+		<texPath>CultivaRim/Traits/Trait_RapidGrowth</texPath>
+	</CultivaRim.CropTraitDef>
+
+	<CultivaRim.CropTraitDef>
+		<defName>CultivaRim_Trait_ToxResistant</defName>
+		<label>tox resistant</label>
+		<description>Prevents a plant from dying in toxic conditions, but it will only grow at a fraction of normal speed.</description>
+		<texPath>CultivaRim/Traits/Trait_ToxicGrowth</texPath>
 	</CultivaRim.CropTraitDef>
 	
 </Defs>
