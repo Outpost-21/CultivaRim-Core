@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<CultivaRim.CropKnowledgeLevelUp>{0} knowledge has increased to level {1}!</CultivaRim.CropKnowledgeLevelUp>
+	<CultivaRim.WildPrefix>wild {0}</CultivaRim.WildPrefix>
+	<CultivaRim.TraitButtonLabel>Choose Trait...</CultivaRim.TraitButtonLabel>
+	<CultivaRim.UpgradeButtonLabel>Upgrade</CultivaRim.UpgradeButtonLabel>
+	<CultivaRim.SelectTrait>Select</CultivaRim.SelectTrait>
+
+</LanguageData>

@@ -1,0 +1,11 @@
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Assemblies\CultivaRim.dll
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Source\CultivaRim\obj\Debug\CultivaRim.csproj.AssemblyReference.cache
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Source\CultivaRim\obj\Debug\CultivaRim.csproj.CoreCompileInputs.cache
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Source\CultivaRim\obj\Debug\CultivaRim.dll
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Source\JustRoots\obj\Debug\CultivaRim.csproj.AssemblyReference.cache
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Source\JustRoots\obj\Debug\CultivaRim.csproj.CoreCompileInputs.cache
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.4\Source\JustRoots\obj\Debug\CultivaRim.dll
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.5\Source\JustRoots\obj\Debug\CultivaRim.csproj.AssemblyReference.cache
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.5\Source\JustRoots\obj\Debug\CultivaRim.csproj.CoreCompileInputs.cache
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.5\Source\JustRoots\obj\Debug\CultivaRim.dll
+F:\RWModCategories\Neronix17\CultivaRim\CultivaRim - Core\1.5\Assemblies\CultivaRim.dll
