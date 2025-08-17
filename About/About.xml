@@ -3,7 +3,7 @@
 	<name>CultivaRim - Core</name>
 	<author>Erin, Haru and Neronix17</author>
 	<supportedVersions>
-		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
 	<packageId>ErHaNe.CultivaRim.Core</packageId>
 	<description>Core CultivaRim module handling additional mechanics for crops, having to find them before you can plant them, and enhancing them through a variety of methods.</description>
